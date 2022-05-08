@@ -34,7 +34,12 @@ export class ListenKey {
     this.keyboard.addEventListener('mouseup', (e) => {
       this.shiftKey(e.target.dataset);
       this.clickShift(e);
+      this.clearActive();
       this.removeActive(e.target.dataset);
+    });
+
+    this.keyboard.addEventListener('dblclick', (e) => {
+      this.spaceTranslate(e);
     });
   }
 
@@ -109,7 +114,7 @@ export class ListenKey {
         area.selectionEnd = count + 1;
         break;
       case 'Tab':
-        val.splice(count, 0, '  ');
+        val.splice(count, 0, '   ');
         area.value = val.join('');
         area.selectionEnd = count + 4;
         break;
@@ -199,6 +204,41 @@ export class ListenKey {
       item.textContent = shiftValue;
       item.dataset.shiftvalue = value;
     }
+  }
+
+  spaceTranslate(event) {
+    if (event.target.dataset.code === 'MetaLeft') {
+      this.language = localStorage.getItem('lang');
+      let langSym = document.querySelectorAll('[data-lang]');
+      if (this.language === 'en') {
+        localStorage.setItem('lang', 'ru');
+      } else {
+        localStorage.setItem('lang', 'en');
+      }
+
+      for (let key of langSym) {
+        let [value, lang] = [
+          key.textContent,
+          key.dataset.lang
+        ];
+        key.textContent = lang;
+        key.dataset.lang = value;
+      }
+      if (this.boolUp) {
+        this.lowerCase();
+      } else {
+        this.upperCase();
+      }
+    }
+  }
+
+  clearActive() {
+    let arr = document.querySelectorAll('[data-code]');
+    setTimeout(() => {
+      for (let i of arr) {
+        i.classList.remove('active');
+      }
+    }, 100);
   }
 
   void() {

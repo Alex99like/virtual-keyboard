@@ -55,7 +55,7 @@ export const arrKey = [
   { value: '▲', code: 'ArrowUp', class: 'key' },
   { value: 'Shift', code: 'ShiftRight', class: 'shiftR' },
   { value: 'Ctrl', code: 'ControlLeft', class: 'ctrl' },
-  { value: 'WIN', code: 'MetaLeft', class: 'win' },
+  { value: '🌐', code: 'MetaLeft', class: 'win' },
   { value: 'Alt', code: 'AltLeft', class: 'alt' },
   { value: ' ', code: 'Space', class: 'space' },
   { value: 'Alt', code: 'AltRight', class: 'alt' },

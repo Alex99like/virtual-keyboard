@@ -208,7 +208,9 @@ textarea::-webkit-scrollbar-thumb {
 
 footer {
     text-align: center;
+    margin: 0 auto;
     margin-bottom: 40px;
+    max-width: 380px;
 }
 
 .capslook.addActive {

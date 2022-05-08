@@ -7,17 +7,17 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
     clean: true
   },
-    plugins: [
+  plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html'
-        })
-    ],
-    module: {
-        rules: [
-          {
-            test: /\.css$/i,
-            use: ["style-loader", "css-loader"],
-          },
-        ],
-      },
-}
+    })
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  }
+};

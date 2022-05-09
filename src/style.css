@@ -40,14 +40,14 @@ textarea {
 }
 
 textarea::-webkit-scrollbar {
-    width: 12px;               /* ширина scrollbar */
+    width: 12px;               
   }
 textarea::-webkit-scrollbar-track {
     background: rgb(236, 234, 234);   
     border-radius: 20px;
   }
 textarea::-webkit-scrollbar-thumb {
-    background-color: rgb(255, 255, 255);    /* цвет плашки */
+    background-color: rgb(255, 255, 255);   
     border-radius: 20px;  
     border: 1px solid rgb(134, 134, 134);   
 }
